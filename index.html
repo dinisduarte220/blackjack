@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='style.css'>
+    <link rel='shortcut icon' href='IMG/icon.ico' type='image/x-icon'>
+    <script src='https://unpkg.com/boxicons@2.1.4/dist/boxicons.js'></script>
+    <script src='https://kit.fontawesome.com/207c253573.js' crossorigin='anonymous'></script>
+    <title>Black Jack</title>
+</head>
+<body>
+    <div id="game">
+        <div id="gameZone">
+            <div id="newGame">
+                <input type="text" placeholder="Bet Value" id="betValue" oninput="checkBet(this.value)">
+                <br><br>
+                <button id="btn_startGame" onclick="startGame()" disabled>NEW GAME</button>
+            </div>
+            <div id="moneyValues">
+                <div id="money">Money: 100€</div>
+                <div id="currentBet" style="display: none">Current Bet: 0€</div>
+            </div>
+
+            <div id="dealerCards"></div>
+
+            <div id="playerCards"></div>
+            
+            <div id="playerControls">
+                <button id="btn_hit" onclick="hit()" style="background-color: rgb(5, 48, 5);">Hit</button>
+                <button id="btn_stand" onclick="stand()" style="background-color: rgb(82, 22, 12);">Stand</button>
+                <button id="btn_double" onclick="double()" style="background-color: rgb(51, 9, 59);">Double</button>
+                <button id="btn_split" onclick="split()" style="background-color: rgb(12, 21, 61);" disabled>Split</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="gameFinished">
+        <h2 id="gameResult">You won: 00€!</h2>
+        <br>
+        <button onclick="goToMenu()">Go to Menu</button>
+    </div>
+
+    <script src='script.js'></script>
+</body>
+</html>

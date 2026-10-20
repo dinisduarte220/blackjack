@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  user-select: none;
+}
+
+body {
+  background-color: rgb(25, 25, 25);
+}
+
+#gameZone {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  height: 90vh;
+  background-color: rgb(21, 80, 21);
+  border-radius: 50px;
+  z-index: 0;
+}
+
+/* New Game */
+#newGame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+#newGame input {
+  width: 5em;
+  background-color: rgb(8, 65, 8);
+  border: 2px solid rgb(6, 41, 6);
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: whitesmoke;
+  outline: none;
+  text-align: center;
+}
+#newGame button {
+  background-color: rgb(9, 68, 9);
+  border: 2px solid rgb(6, 41, 6);
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: whitesmoke;
+}
+#newGame button:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+/* Money / Current Bet Indicator */
+#moneyValues {
+  position: absolute;
+  top: 1.5em;
+  left: 1.5em;
+  color: whitesmoke;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+/* Cards Position */
+#dealerCards {
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 80vw;
+  height: 20em;
+  display: flex;
+}
+
+#playerCards {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 80vw;
+  height: 20em;
+  display: flex;
+}
+
+/* PLayer Controls */
+#playerControls {
+  position: absolute;
+  bottom: 1em;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: none;
+  flex-direction: row;
+  gap: 15px;
+}
+#playerControls button {
+  padding: 10px 0;
+  width: 6em;
+  font-weight: 600;
+  color: whitesmoke;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#playerControls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Deck Design */
+.backFacedCard {
+  height: calc(15em + 10px);
+  border-radius: 15px;
+  scale: 0.75;
+}
+
+/* Cards Design */
+.card {
+  width: 10em;
+  height: 15em;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 1rem black;
+  border-radius: 15px;
+  position: relative;
+  padding: 5px 10px;
+  scale: 0.75;
+  animation: card_anim 1s;
+}
+.card .cardSuit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+  font-size: 5em;
+  color: red;
+}
+.card .cardTop {
+  position: absolute;
+  top: 5px;
+  left: 12px;
+  font-weight: 600;
+  font-size: 2em;
+  color: red;
+}
+.card .cardBottom {
+  position: absolute;
+  bottom: 5px;
+  right: 12px;
+  font-weight: 600;
+  font-size: 2em;
+  color: red;
+  transform: rotate(180deg);
+}
+
+/* Animations */
+@keyframes card_anim {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Game Finished */
+#gameFinished {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.342);
+  padding: 10px;
+  border-radius: 15px;
+  color: whitesmoke;
+  text-align: center;
+  display: none;
+}
+#gameFinished button {
+  width: fit-content;
+  padding: 5px 10px;
+  background-color: rgb(224, 224, 224);
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+}
